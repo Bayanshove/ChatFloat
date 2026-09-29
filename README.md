@@ -1,55 +1,79 @@
-# ChatFloat 🫧
+# ChatFloat
 
-**Android 悬浮窗 AI 聊天翻译工具**
+Android 懸浮窗 AI 翻譯 / 覆訊 App，支援自訂 OpenAI 相容 API，專為 TikTok 聊天場景設計。
 
-在 TikTok 等社交软件上与外国人聊天时，一键复制消息 → AI 翻译成繁体中文 → 生成地道英文回复。
+## 功能
 
-## ✨ 核心功能
+- 🫧 系統級懸浮小氣泡，可拖曳、點開面板
+- 📋 手動讀取剪貼板內容並翻譯（不自動讀取，避免二進制亂碼崩潰）
+- 💭 顯示 AI 思考過程（reasoning_content），獨立卡片展示
+- 📝 翻譯結果 + 俚語解釋卡片
+- 💬 覆訊生成 + 一鍵複製
+- 📝 日誌記錄（App 內開關、導出到 Download、清除）
+- 🌐 多語言介面（系統預設 / English / 簡體中文 / 繁體中文）
+- 🛡️ 輸入過濾：自動移除控制字符、限制長度，防止二進制數據崩潰
 
-- **悬浮球 + 悬浮面板**：系统层悬浮窗，可覆盖在其他应用上操作
-- **复制即翻译**：长按对方消息 → 复制 → 点悬浮球 → 自动读取剪贴板翻译
-- **AI 回复生成**：输入中文，生成地道英文（带语气与情绪）
-- **自定义 API**：支持任何 OpenAI 兼容 API（DeepSeek / Claude / 本地模型）
-- **AI 思考过程可视化**：展示 `reasoning_content` 思考链与结果分区
-- **详细日志系统**：UTC+8 时间戳，可开关、可导出到 Download
-- **多语言支持**：系统默认 / English / 简体中文 / 繁体中文 (TW)
-- **首次启动欢迎页**：简洁品牌化介绍
-- **翻译协议**：【译】翻译 / 【回】回复，指令前缀明确识别
+## 目錄結構
 
-## 🔧 使用流程
-
-1. 填入 API 地址 + Key，点「🔄 拉取」选模型，保存
-2. 点「🫧 启动悬浮球」→ 允许「显示在其他应用上层」
-3. TikTok 长按对方消息 → 复制 → 点悬浮球 → 自动翻译
-4. 「我的回复」输入中文 → 生成地道英文 → 复制粘贴
-
-## 🌐 语言切换
-
-设置页顶部有语言下拉框，可即时切换：
-- 系统默认 / System Default
-- English
-- 简体中文
-- 繁体中文 (TW)
-
-## 🔒 隐私
-
-- API Key 仅保存在本机 SharedPreferences
-- 日志文件存在应用私有目录，手动导出到 Download
-
-## 📝 开发说明
-
-- **语言**：Java（无 Kotlin 依赖）
-- **构建**：Gradle 8.5 + AGP 8.2.0 + JDK 17
-- **部署**：覆盖安装保留配置
-- **APK 大小**：~72KB（极小）
-
-## 📦 构建
-
-```bash
-gradle assembleDebug --no-daemon -Dorg.gradle.vfs.watch=false
-# 输出: app/build/outputs/apk/debug/app-debug.apk
+```
+ChatFloat/
+├── app/src/main/java/com/hwcloud/chatfloat/
+│   ├── WelcomeActivity.java        # 歡迎頁 + 語言選擇
+│   ├── MainActivity.java           # 主界面
+│   ├── SettingsActivity.java       # 設定頁
+│   ├── BubbleService.java          # 懸浮窗服務（拆分為 part1 + part2）
+│   ├── BubbleService_part1.java    # 懸浮窗服務（上半部）
+│   ├── BubbleService_part2.java    # 懸浮窗服務（下半部）
+│   ├── ApiClient.java             # OpenAI API 呼叫 + reasoning 解析
+│   ├── LanguageUtils.java         # 多語言工具
+│   ├── Logger.java                # 日誌工具
+│   └── ... (其他 Activity)
+├── app/src/main/res/
+│   └── values/...                 # 多語言資源（en / zh-rCN / zh-rTW）
+└── build/merge_bubbleservice.sh   # 合併腳本
 ```
 
-## 📄 License
+## 建置
 
-MIT
+### 1. 合併 BubbleService.java
+
+由於文件大小限制，`BubbleService.java` 被拆分為兩個部分：
+
+```bash
+cd app/src/main/java/com/hwcloud/chatfloat
+cat BubbleService_part1.java BubbleService_part2.java > BubbleService.java
+```
+
+或執行合併腳本：
+
+```bash
+./build/merge_bubbleservice.sh
+```
+
+### 2. 安裝 Gradle Wrapper
+
+```bash
+git clone --depth 1 https://github.com/gradle/gradle.git /tmp/gradle
+cp -r /tmp/gradle/gradle/wrapper/gradle-wrapper.jar gradle/wrapper/gradle-wrapper.jar
+chmod +x gradlew
+```
+
+### 3. 建置 APK
+
+```bash
+./gradlew assembleDebug
+```
+
+輸出：`app/build/outputs/apk/debug/app-debug.apk`
+
+## 安裝
+
+```bash
+adb install -r app/build/outputs/apk/debug/app-debug.apk
+```
+
+授權懸浮窗權限 → 設定 API（base URL / key / model）→ 開始使用。
+
+## 授權
+
+MIT License
