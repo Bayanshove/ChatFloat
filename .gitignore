@@ -1,0 +1,17 @@
+# Local gradle cache (kept out; wrapper is committed)
+.gradle/
+# keep gradle wrapper (needed for build) but not the .gradle cache
+*.iml
+# Build outputs
+build/
+app/build/
+# IDE
+.idea/
+.DS_Store
+# Temp
+*.tmp
+# ProGuard
+*.apk
+*.aab
+# Keys
+keystore.jks
