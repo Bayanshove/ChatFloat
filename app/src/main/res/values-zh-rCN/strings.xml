@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ChatFloat</string>
+
+    <!-- Welcome -->
+    <string name="welcome_title">ChatFloat</string>
+    <string name="welcome_subtitle">悬浮球 AI 聊天翻译</string>
+    <string name="welcome_desc">在 TikTok 等应用程序上与外国人聊天\n复制消息 → 一键翻译 → 地道回复</string>
+    <string name="welcome_api">支持任何 OpenAI 兼容 API\nDeepSeek / Claude / 本地模型</string>
+    <string name="welcome_privacy">🔒 API Key 仅保存在本地</string>
+    <string name="welcome_start">开始使用</string>
+
+    <!-- Settings -->
+    <string name="settings_title">ChatFloat 悬浮翻译</string>
+    <string name="settings_desc">悬浮球 AI 聊天翻译 · 支持任何 OpenAI 兼容 API</string>
+    <string name="api_url">API 地址（OpenAI 兼容）</string>
+    <string name="api_key">API Key（只保存在本机）</string>
+    <string name="model_name">模型名称</string>
+    <string name="model_fetch">🔄 拉取</string>
+    <string name="model_hint">下拉选择或手动输入模型名称</string>
+    <string name="system_prompt">系统提示词（可自定义翻译风格）</string>
+    <string name="save">💾 保存设置</string>
+    <string name="test">🔌 测试连接</string>
+    <string name="start">🫧 启动悬浮球</string>
+    <string name="status_success">✅ 已获取 %d 个模型</string>
+    <string name="status_empty">⚠️ 未获取到模型，请手动输入</string>
+    <string name="status_fetching">⏳ 拉取模型列表中…</string>
+    <string name="status_test">⏳ 测试中…</string>
+    <string name="status_error">❌ %s</string>
+    <string name="permission_overlay">请允许「显示在其他应用上层」权限后，返回再点一次启动</string>
+    <string name="toast_saved">已保存</string>
+    <string name="toast_started">悬浮球已启动，可切到 TikTok 使用</string>
+    <string name="toast_permission">请先填写 API 地址</string>
+    <string name="usage_title">使用方法</string>
+    <string name="usage_text">1. 填 API 地址+Key，点「🔄 拉取」选模型，保存\n2. 点「启动悬浮球」→ 允许「显示在其他应用上层」\n3. TikTok 长按对方消息 → 复制 → 点悬浮球 → 自动翻译\n4. 「我的回复」输入中文 → 生成地道英文 → 复制粘贴\n5. 拖动悬浮球可移动；通知栏可退出\n6. 面板右上角 📋 可导出日志供调试</string>
+
+    <!-- Logging -->
+    <string name="log_title">日志设置</string>
+    <string name="log_enabled">启用日志记录</string>
+    <string name="log_auto_start">启动时自动开启日志</string>
+    <string name="log_export">📤 导出日志</string>
+    <string name="log_clear">🗑️ 清除日志</string>
+    <string name="log_exported">已导出到 /sdcard/Download/ChatFloat_log.txt</string>
+    <string name="log_cleared">日志已清除</string>
+
+    <!-- Language -->
+    <string name="language_title">语言 / Language</string>
+    <string name="language_system">系统默认 / System Default</string>
+    <string name="language_zh_cn">简体中文</string>
+    <string name="language_zh_tw">繁体中文 (TW)</string>
+    <string name="language_en">English</string>
+
+    <!-- BubbleService -->
+    <string name="bubble_hint">点下方按钮自动读取剪贴板</string>
+    <string name="btn_clipboard">📋 读取剪贴板并翻译</string>
+    <string name="btn_reply">✍️ 生成英文回复</string>
+    <string name="btn_copy">📄 复制回复</string>
+    <string name="status_thinking">🤔 AI 思考中</string>
+    <string name="status_done">✅ 完成</string>
+    <string name="label_opponent">对方消息</string>
+    <string name="label_thinking">💭 AI 思考过程</string>
+    <string name="label_result">📝 翻译结果</string>
+    <string name="label_reply">我的回复（输入中文）</string>
+    <string name="hint_reply">输入想说的中文，生成地道英文</string>
+    <string name="toast_copied">已复制，去 TikTok 粘贴发送</string>
+    <string name="btn_close">收起</string>
+    <string name="btn_log">📋</string>
+    <string name="toast_log_copied">日志已复制到剪贴板（%d 行）</string>
+    <string name="toast_log_exported">日志已导出 /sdcard/Download/ChatFloat_log.txt</string>
+    <string name="toast_log_failed">导出失败: %s</string>
+    <string name="toast_no_log">无日志文件</string>
+    <string name="status_clip_hint">提示：在 TikTok 长按消息 → 复制，再点上方按钮</string>
+    <string name="status_no_text">没有可翻译的文字：请先复制对方消息</string>
+    <string name="status_no_reply">请先输入想回复的中文</string>
+    <string name="status_no_reply_generated">还没有生成回复</string>
+</resources>

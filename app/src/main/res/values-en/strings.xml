@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ChatFloat</string>
+
+    <!-- Welcome -->
+    <string name="welcome_title">ChatFloat</string>
+    <string name="welcome_subtitle">Floating Bubble AI Chat Translator</string>
+    <string name="welcome_desc">Chat with foreigners on TikTok and other apps\nCopy message → One-tap translate → Natural reply</string>
+    <string name="welcome_api">Supports any OpenAI-compatible API\nDeepSeek / Claude / Local models</string>
+    <string name="welcome_privacy">🔒 API Key stored locally only</string>
+    <string name="welcome_start">Get Started</string>
+
+    <!-- Settings -->
+    <string name="settings_title">ChatFloat Floating Translator</string>
+    <string name="settings_desc">Floating bubble AI chat translator · Supports any OpenAI-compatible API</string>
+    <string name="api_url">API URL (OpenAI-compatible)</string>
+    <string name="api_key">API Key (stored locally only)</string>
+    <string name="model_name">Model Name</string>
+    <string name="model_fetch">🔄 Fetch</string>
+    <string name="model_hint">Select from dropdown or enter manually</string>
+    <string name="system_prompt">System Prompt (customize translation style)</string>
+    <string name="save">💾 Save Settings</string>
+    <string name="test">🔌 Test Connection</string>
+    <string name="start">🫧 Start Bubble</string>
+    <string name="status_success">✅ Fetched %d models</string>
+    <string name="status_empty">⚠️ No models fetched, please enter manually</string>
+    <string name="status_fetching">⏳ Fetching models…</string>
+    <string name="status_test">⏳ Testing…</string>
+    <string name="status_error">❌ %s</string>
+    <string name="permission_overlay">Please grant \"Display over other apps\" permission, then return and tap start again</string>
+    <string name="toast_saved">Saved</string>
+    <string name="toast_started">Bubble started, switch to TikTok to use</string>
+    <string name="toast_permission">Please fill in API URL first</string>
+    <string name="usage_title">How to Use</string>
+    <string name="usage_text">1. Fill API URL+Key, tap \"🔄 Fetch\" to select model, save\n2. Tap \"Start Bubble\" → Grant \"Display over other apps\" permission\n3. On TikTok, long-press message → Copy → Tap bubble → Auto translate\n4. Type Chinese in \"My Reply\" → Generate English → Copy &amp; paste\n5. Drag bubble to move; exit from notification\n6. Tap 📋 in panel to export logs for debugging</string>
+
+    <!-- Logging -->
+    <string name="log_title">Logging Settings</string>
+    <string name="log_enabled">Enable Logging</string>
+    <string name="log_auto_start">Auto-enable logging on startup</string>
+    <string name="log_export">📤 Export Logs</string>
+    <string name="log_clear">🗑️ Clear Logs</string>
+    <string name="log_exported">Exported to /sdcard/Download/ChatFloat_log.txt</string>
+    <string name="log_cleared">Logs cleared</string>
+
+    <!-- Language -->
+    <string name="language_title">Language / 語言</string>
+    <string name="language_system">System Default / 系統默認</string>
+    <string name="language_zh_cn">简体中文</string>
+    <string name="language_zh_tw">繁體中文 (TW)</string>
+    <string name="language_en">English</string>
+
+    <!-- BubbleService -->
+    <string name="bubble_hint">Tap button below to auto-read clipboard</string>
+    <string name="btn_clipboard">📋 Read Clipboard &amp; Translate</string>
+    <string name="btn_reply">✍️ Generate English Reply</string>
+    <string name="btn_copy">📄 Copy Reply</string>
+    <string name="status_thinking">🤔 AI Thinking</string>
+    <string name="status_done">✅ Done</string>
+    <string name="label_opponent">Their Message</string>
+    <string name="label_thinking">💭 AI Thinking Process</string>
+    <string name="label_result">📝 Translation Result</string>
+    <string name="label_reply">My Reply (type Chinese)</string>
+    <string name="hint_reply">Type what you want to say in Chinese, generate natural English</string>
+    <string name="toast_copied">Copied, paste in TikTok to send</string>
+    <string name="btn_close">Close</string>
+    <string name="btn_log">📋</string>
+    <string name="toast_log_copied">Logs copied to clipboard (%d lines)</string>
+    <string name="toast_log_exported">Logs exported to /sdcard/Download/ChatFloat_log.txt</string>
+    <string name="toast_log_failed">Export failed: %s</string>
+    <string name="toast_no_log">No log file</string>
+    <string name="status_clip_hint">Tip: On TikTok, long-press message → Copy, then tap button above</string>
+    <string name="status_no_text">No text to translate: please copy their message first</string>
+    <string name="status_no_reply">Please type what you want to reply first</string>
+    <string name="status_no_reply_generated">No reply generated yet</string>
+</resources>
